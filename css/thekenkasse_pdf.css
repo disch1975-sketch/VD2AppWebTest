@@ -32,7 +32,7 @@ main,
 }
 
 /* Deine Print-Seite im normalen View */
-.clubkasse-print-page {
+.thekenkasse-print-page {
     width: 100%;
     max-width: none; /* 🔥 wichtig gegen „klein wirken“ */
     margin: 0;
@@ -45,19 +45,19 @@ main,
    📄 HEADER
 ========================================================= */
 
-.clubkasse-pdf-title {
+.thekenkasse-pdf-title {
     text-align: center;
     margin-bottom: 6px;
 }
 
-    .clubkasse-pdf-title .title-line,
-    .clubkasse-pdf-title .date-line {
+    .thekenkasse-pdf-title .title-line,
+    .thekenkasse-pdf-title .date-line {
         font-size: 20px;
         font-weight: 600;
         color: #333;
     }
 
-    .clubkasse-pdf-title .date-line {
+    .thekenkasse-pdf-title .date-line {
         margin-top: 2px;
         font-weight: 500;
         color: #555;
@@ -69,7 +69,7 @@ main,
    📊 CONTENT
 ========================================================= */
 
-.clubkasse-content h2 {
+.thekenkasse-content h2 {
     font-size: 12px;
     margin-top: 4px;
     border-bottom: 1px solid #ddd;
@@ -97,7 +97,7 @@ main,
    💰 SUMMARY
 ========================================================= */
 
-.clubkasse-summary-bar {
+.thekenkasse-summary-bar {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -152,25 +152,25 @@ main,
         color: #c82333;
     }
 
-.clubkasse-card {
+.thekenkasse-card {
     padding: 1px 8px;
     border-radius: 10px;
 }
 
-.clubkasse-row-grid {
+.thekenkasse-row-grid {
     display: grid;
     grid-template-columns: 90px 1fr 120px;
     grid-template-rows: auto;
     row-gap: 2px;
 }
 
-.clubkasse-datum,
-.clubkasse-kategorie,
-.clubkasse-betrag {
+.thekenkasse-datum,
+.thekenkasse-kategorie,
+.thekenkasse-betrag {
     font-size: 12px;
 }
 
-.clubkasse-kommentar {
+.thekenkasse-kommentar {
     font-size: 10px;
     line-height: 1.0;
     color: #777;
@@ -192,7 +192,7 @@ main,
     color: gray;
     margin-top: 2px;
 }
-.clubkasse-middle {
+.thekenkasse-middle {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -269,8 +269,8 @@ main,
     .page,
     main,
     .main-content,
-    .clubkasse-print-page,
-    .clubkasse-content {
+    .thekenkasse-print-page,
+    .thekenkasse-content {
         height: auto !important;
         overflow: visible !important;
         max-height: none !important;
@@ -278,7 +278,7 @@ main,
     }
 
     @media print {
-        .clubkasse-print-page {
+        .thekenkasse-print-page {
             max-width: none !important;
             width: 100% !important;
             margin: 0 !important;
