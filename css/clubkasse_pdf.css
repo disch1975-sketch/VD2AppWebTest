@@ -9,7 +9,8 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-image: url('/images/carbon.png');
+    background: transparent;
+    
 }
 
 /* =========================================================
@@ -36,7 +37,7 @@ main,
     max-width: none; /* 🔥 wichtig gegen „klein wirken“ */
     margin: 0;
     padding: 20px;
-    background: white;
+    background: transparent !important;
     box-sizing: border-box;
 }
 
