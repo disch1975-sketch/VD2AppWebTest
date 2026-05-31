@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="apple-touch-icon" href="images/appicon-192.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <script>
         (function () {
@@ -32,6 +33,9 @@
     <link href="./css/Animation/rotate90.css" rel="stylesheet" />
     <link href="./css/Animation/sterneblinken.css" rel="stylesheet" />
     <link href="./css/Animation/zweimalblickrot.css" rel="stylesheet" />
+
+
+    <link href="css/clubkasse_pdf.css?v=1" rel="stylesheet" />
 
     <style>
         body {
@@ -188,10 +192,17 @@
     </script>
 
     <script src="./_framework/blazor.webassembly.js" autostart="false"></script>
+
     <script>
         Blazor.start().then(() => {
             finishLoading();
         });
+    </script>
+
+    <script>
+        window.printClubkasse = function () {
+            window.print();
+        };
     </script>
 
 </body>

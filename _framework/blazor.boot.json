@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "VD2AppWebTest",
   "resources": {
-    "hash": "sha256-NT0nQIY2EzFLOKej0hTi3X/3PYZMx1SmzpOQXkwJFok=",
+    "hash": "sha256-2XDuLUFtROEmvQfasAZ9BErJr7orKm6pK8ESZNvgizA=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -20,7 +20,7 @@
     "assembly": {
       "BCrypt.Net-Next.wasm": "sha256-vn1+CLDQA7cXT++8crd9GTBHootDpHMDJ06/FyiImpA=",
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "Microsoft.AspNetCore.Components.wasm": "sha256-36PzM855BUjiESaIxxddHIJ68ZJe5XR2wWSwcQY9MFA=",
+      "Microsoft.AspNetCore.Components.wasm": "sha256-EI7rodz4kBDCld9YonVBsuv67JQ4CEH9hcFAe0fgtHM=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-Bi5N0CFbx3QdHAhF32iYEvQ14TjhE5rxvU6Mn/sWgF4=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-6IV3M5nxBMK/Bf3l6lYKV7hELGd1O3ws168wysUHiJg=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-AES27cESfoDjkCIe5A4UC/3BrjRtU3TaZjfTgUOeZgc=",
@@ -71,7 +71,7 @@
       "System.Formats.Asn1.wasm": "sha256-AlbrehMjniWOcyNjuNoGUbNOEaWt5bl/SsPCiiTKRHg=",
       "System.IO.Compression.wasm": "sha256-zC2jYJa5JkA9wDgyic3JJ0oy7cANmJsa3I75a6fGGlM=",
       "System.Linq.Expressions.wasm": "sha256-syJzepBxGS6jObZlabsySuhezJAx95mCcc3NXGu2qok=",
-      "System.Linq.wasm": "sha256-9tY5VxwLJITvQhk/iVsvzeG9DRd32IXbdYRjlnA45bU=",
+      "System.Linq.wasm": "sha256-2LTpeyur1QiN5ZIv5xXB1RKUZXb92HiGJKeqcQClCBg=",
       "System.Memory.wasm": "sha256-Ktab2IQqYv2qNQkHl6Sfd4bMExguzLCmWvzKWZ877Vs=",
       "System.Net.Http.wasm": "sha256-AhWXnnriIPxkLOvdcy0v+rLNjeOWd1L0UdB/mHMjnK0=",
       "System.Net.NetworkInformation.wasm": "sha256-XoSccM25fmATNqe/m2/2pXDZVFh3LZxGY3908hdId8w=",
@@ -110,7 +110,7 @@
       "System.wasm": "sha256-YSihFa+YInKtLQNBZCK8pNPmas5a97BeIhBK9Cl2Qx8=",
       "netstandard.wasm": "sha256-MjYHLQ6ee9bjPrJqe7H6COtQAW52W9HQce75ChAvnIs=",
       "System.Private.CoreLib.wasm": "sha256-y2UfKZaVXDySlDMAY77EInntkmBSFp0BqXMVTE78Lfk=",
-      "VD2AppWebTest.wasm": "sha256-RoivzBLYrw80+sZP3ZR+NuS11n3CP/uZ00NTxoN8Atw="
+      "VD2AppWebTest.wasm": "sha256-MftQ39ntcdJVIEHEj6JXkO+FXsHMzU9AGb+8uVpwsYc="
     }
   },
   "cacheBootResources": true,
