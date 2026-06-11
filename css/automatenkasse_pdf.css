@@ -1,4 +1,7 @@
-﻿/* =========================================================
+﻿
+
+
+/* =========================================================
    🧠 GLOBAL
 ========================================================= */
 
@@ -75,6 +78,13 @@ main,
     padding-bottom: 3px;
 }
 
+.clubkasse-content {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+}
+
+
 /* =========================================================
    📋 FILTER
 ========================================================= */
@@ -135,14 +145,15 @@ main,
 
 .pdf-row {
     display: grid;
-    grid-template-columns: 90px 1fr 120px;
+    grid-template-columns: 90px 480px 120px !important;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
     padding: 6px 8px;
     border: 1px solid #ddd;
     background: #fff;
-    font-size: 13px;
-    width: 100%
 }
+
 
     .pdf-row .amount {
         text-align: right;
@@ -228,16 +239,16 @@ main,
 ========================================================= */
 
 .pdf-page {
-    display: block;
+    margin: 0;
     break-after: page;
     page-break-after: always;
-    margin-bottom: 10px;
+    break-inside: avoid;
 }
 
     .pdf-page:last-child {
         break-after: auto;
-        page-break-after: auto;
     }
+
 
 .page-number {
     text-align: right;
@@ -285,10 +296,11 @@ main,
 
     @media print {
         .automatenkasse-print-page {
-            max-width: none !important;
-            width: 100% !important;
+            width: 210mm !important;
+            min-height: 297mm !important;
             margin: 0 !important;
-            padding: 0 !important;
+            padding: 6mm 10mm !important;
+            box-sizing: border-box;
         }
     }
 
@@ -311,4 +323,10 @@ main,
         page-break-after: always;
         width: 100%;
     }
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
 }

@@ -33,12 +33,12 @@ main,
 
 /* Deine Print-Seite im normalen View */
 .clubkasse-print-page {
-    width: 100%;
-    max-width: none; /* 🔥 wichtig gegen „klein wirken“ */
-    margin: 0;
-    padding: 5px 8px;
-    background: transparent !important;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm; /* 👈 DAS sind deine echten Ränder */
+
     box-sizing: border-box;
+    margin: 0;
 }
 
 /* =========================================================
@@ -74,6 +74,13 @@ main,
     margin-top: 4px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 3px;
+}
+
+.clubkasse-content {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+   
 }
 
 /* =========================================================
@@ -137,19 +144,37 @@ main,
 
 .pdf-row {
     display: grid;
-    grid-template-columns: 90px  1fr 120px;
+    grid-template-columns: 90px 480px 120px !important;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
     padding: 6px 8px;
     border: 1px solid #ddd;
     background: #fff;
-    font-size: 13px;
-    width: 100%
 }
 
-    .pdf-row .amount {
-        text-align: right;
-        font-variant-numeric: tabular-nums;
-    }
+.clubkasse-date {
+}
+
+.clubkasse-middle {
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.clubkasse-amount {
+    text-align: right;
+}
+
+
+.clubkasse-kategorie,
+.clubkasse-kommentar {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 
     .pdf-row.einnahme .amount {
         color: #1e7e34;
@@ -160,16 +185,13 @@ main,
     }
 
 .clubkasse-card {
+    width: 100%;
+    box-sizing: border-box;
     padding: 1px 8px;
     border-radius: 10px;
 }
 
-.clubkasse-row-grid {
-    display: grid;
-    grid-template-columns: 90px 1fr 120px;
-    grid-template-rows: auto;
-    row-gap: 2px;
-}
+
 
 .clubkasse-datum,
 .clubkasse-kategorie,
@@ -200,17 +222,17 @@ main,
     margin-top: 2px;
 }
 .clubkasse-middle {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
-.amount.einnahme {
+.clubkasse-amount.einnahme {
     color: #1e7e34 !important;
     font-weight: 600;
 }
 
-.amount.ausgabe {
+.clubkasse-amount.ausgabe {
     color: #c82333 !important;
     font-weight: 600;
 }
@@ -229,15 +251,14 @@ main,
 ========================================================= */
 
 .pdf-page {
-    display: block;
+    margin: 0;
     break-after: page;
     page-break-after: always;
-    margin-bottom: 10px;
+    break-inside: avoid;
 }
 
     .pdf-page:last-child {
         break-after: auto;
-        page-break-after: auto;
     }
 
 .page-number {
@@ -255,7 +276,7 @@ main,
 
     @page {
         size: A4;
-        margin: 6mm;
+        margin: 0;
     }
 
     /* App Shell komplett weg */
@@ -284,20 +305,23 @@ main,
         display: block !important;
     }
 
-    @media print {
+   
         .clubkasse-print-page {
-            max-width: none !important;
-            width: 100% !important;
+            width: 210mm !important;
+            min-height: 297mm !important;
             margin: 0 !important;
-            padding: 0 !important;
+            padding: 6mm 10mm !important;
+            box-sizing: border-box;
         }
-    }
+    
 
 
     /* Seiten sauber trennen */
     .pdf-page {
         break-after: page !important;
         page-break-after: always !important;
+       
+     
     }
 
     .pdf-row {
@@ -306,10 +330,19 @@ main,
     }
 
 
+  
+
+
+
     .pdf-page {
         display: block;
         break-after: page;
         page-break-after: always;
         width: 100%;
+    }
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 }

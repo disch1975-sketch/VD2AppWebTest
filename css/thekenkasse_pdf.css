@@ -34,9 +34,9 @@ main,
 /* Deine Print-Seite im normalen View */
 .thekenkasse-print-page {
     width: 100%;
-    max-width: none; /* 🔥 wichtig gegen „klein wirken“ */
+    max-width: none;
     margin: 0;
-    padding: 5px 8px;
+    padding: 0;
     background: transparent !important;
     box-sizing: border-box;
 }
@@ -75,6 +75,13 @@ main,
     border-bottom: 1px solid #ddd;
     padding-bottom: 3px;
 }
+
+.thekenkasse-content {
+    width: 100% !important;
+    max-width: none; 
+    box-sizing: border-box;
+}
+
 
 /* =========================================================
    📋 FILTER
@@ -136,16 +143,17 @@ main,
 
 .pdf-row {
     display: grid;
-    grid-template-columns: 90px  1fr 120px;
+    grid-template-columns: 90px 480px 120px !important;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
     padding: 6px 8px;
     border: 1px solid #ddd;
     background: #fff;
-    font-size: 13px;
-    width: 100%
 }
 
-    .pdf-row .amount {
+
+    .pdf-row.amount {
         text-align: right;
         font-variant-numeric: tabular-nums;
     }
@@ -228,16 +236,16 @@ main,
 ========================================================= */
 
 .pdf-page {
-    display: block;
+    margin: 0;
     break-after: page;
     page-break-after: always;
-    margin-bottom: 10px;
+    break-inside: avoid;
 }
 
     .pdf-page:last-child {
         break-after: auto;
-        page-break-after: auto;
     }
+
 
 .page-number {
     text-align: right;
@@ -247,17 +255,36 @@ main,
 }
 
 /* =========================================================
-   🖨 PRINT MODE (KRITISCHER FIX)
+   🖨 PRINT MODE (FIXED)
 ========================================================= */
 
 @media print {
 
+    /* =====================================================
+       PAGE SETUP
+    ===================================================== */
+
     @page {
         size: A4;
-        margin: 6mm;
+        margin: 10mm; /* sichtbare Ränder */
     }
 
-    /* App Shell komplett weg */
+    /* =====================================================
+       IMPORTANT: PRINT COLORS AKTIVIEREN
+    ===================================================== */
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* =====================================================
+       APP SHELL AUSBLENDEN
+    ===================================================== */
+
     .sidebar,
     .top-row,
     nav,
@@ -266,35 +293,42 @@ main,
         display: none !important;
     }
 
-    /* KEIN SCROLL irgendwo */
-    html, body, #app {
-        height: auto !important;
-        overflow: visible !important;
-    }
+    /* =====================================================
+       LAYOUT RESET (WICHTIG)
+    ===================================================== */
 
+    #app,
     .page,
     main,
     .main-content,
     .thekenkasse-print-page,
     .thekenkasse-content {
         height: auto !important;
-        overflow: visible !important;
         max-height: none !important;
+        overflow: visible !important;
         display: block !important;
     }
 
-    @media print {
-        .thekenkasse-print-page {
-            max-width: none !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
+    /* =====================================================
+       PRINT CONTAINER (A4 AREA)
+    ===================================================== */
+
+    .thekenkasse-print-page {
+        width: 100% !important;
+        min-height: 297mm;
+        margin: 0 !important;
+        padding: 10mm !important;
+        box-sizing: border-box !important;
+        background: white !important;
     }
 
+    /* =====================================================
+       PAGE BREAKS
+    ===================================================== */
 
-    /* Seiten sauber trennen */
     .pdf-page {
+        display: block;
+        width: 100%;
         break-after: page !important;
         page-break-after: always !important;
     }
@@ -302,13 +336,5 @@ main,
     .pdf-row {
         break-inside: avoid;
         page-break-inside: avoid;
-    }
-
-
-    .pdf-page {
-        display: block;
-        break-after: page;
-        page-break-after: always;
-        width: 100%;
     }
 }

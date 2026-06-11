@@ -40,6 +40,10 @@
     <link href="css/automatenkasse_pdf.css?v=1" rel="stylesheet" />
     <link href="css/mitgliederliste_pdf.css?v=1" rel="stylesheet" />
 
+    <link href="css/getraenkeberichte.css?v=1" rel="stylesheet" />
+    <link href="css/kassenbericht.css?v=1" rel="stylesheet" />
+    <link href="css/vereinsbericht.css?v=1" rel="stylesheet" />
+
     <style>
         body {
             margin: 0;
@@ -223,6 +227,34 @@
     <script>
         window.printMitgliederliste = function () {
             window.print();
+        };
+    </script>
+
+    <script>
+        window.printGetraenkebericht = function () {
+            window.print();
+        };
+    </script>
+
+    <script>
+        window.printKassenbericht = function () {
+            window.print();
+        };
+    </script>
+
+    <script>
+        window.printVereinsbericht = function () {
+            window.print();
+        };
+    </script>
+
+    <script>
+        window.registerAfterPrint = function (dotNetRef) {
+
+            window.onafterprint = function () {
+                dotNetRef.invokeMethodAsync('OnAfterPrint');
+            };
+
         };
     </script>
 
