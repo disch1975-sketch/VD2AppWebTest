@@ -14,7 +14,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <base href="/VD2AppWebTest/" />
+    <script>
+        (function () {
+            var base = document.getElementById('baseHref');
+            if (window.location.hostname.includes('github.io')) {
+                base.setAttribute('href', '/VD2AppWebTest/');
+            } else {
+                base.setAttribute('href', '/');
+            }
+        })();
+    </script>
 
     <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/app.css" />
