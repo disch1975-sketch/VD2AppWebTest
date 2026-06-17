@@ -10,7 +10,7 @@
 
 
 /* ==========================
-   HEADER
+   HEADER (IDENTISCH wie Mitgliederliste)
 ========================== */
 
 .pdf-header {
@@ -62,68 +62,105 @@
 
 
 /* ==========================
-   TABELLE
+   MATRIX TABELLE (WICHTIG!)
 ========================== */
 
 .mitglieder-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: 11px;
+    table-layout: fixed; /* 🔥 DAS IST DER ENTSCHEIDENDE FIX */
 }
+
+
+    .mitglieder-table th:not(:first-child),
+    .mitglieder-table td:not(:first-child) {
+        width: 28px;
+        max-width: 28px;
+        min-width: 28px;
+    }
+
 
     .mitglieder-table thead tr {
         background: #dfe6ee;
     }
 
     .mitglieder-table th {
-        padding: 8px;
+        padding: 6px;
         border: 1px solid #bfc6ce;
-        text-align: left;
+        text-align: center;
         font-weight: 700;
+        white-space: nowrap;
     }
 
     .mitglieder-table td {
-        padding: 7px 8px;
+        padding: 5px;
         border: 1px solid #d9dde2;
+        text-align: center;
     }
+
+        /* erste Spalte Name fix breiter */
+        .mitglieder-table th:first-child,
+        .mitglieder-table td:first-child {
+            text-align: left;
+            width: 140px;
+            font-weight: bold;
+        }
+
+        /* X Styling */
+        .mitglieder-table td span {
+            font-weight: bold;
+        }
+
+        .mitglieder-table td b {
+            font-weight: 900;
+        }
+
+
+    /* ==========================
+   ALTERNIERENDE ZEILEN
+========================== */
 
     .mitglieder-table tbody tr:nth-child(even) {
         background: #f7f8fa;
     }
 
 
-    /* ==========================
-   SPALTENBREITEN
+/* ==========================
+   PROZENT BALKEN
 ========================== */
 
-    .mitglieder-table th:nth-child(1),
-    .mitglieder-table td:nth-child(1) {
-        width: 75px;
+.percent-bar {
+    display: flex;
+    margin-top: 10px;
+    height: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+}
+
+.percent-segment {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .percent-segment.red {
+        background: #e74c3c;
+        color: black;
     }
 
-    .mitglieder-table th:nth-child(3),
-    .mitglieder-table td:nth-child(3) {
-        width: 90px;
+    .percent-segment.yellow {
+        background: #f1c40f;
+        color: black;
     }
 
-    .mitglieder-table th:nth-child(4),
-    .mitglieder-table td:nth-child(4) {
-        width: 90px;
-    }
-
-    .mitglieder-table th:nth-child(5),
-    .mitglieder-table td:nth-child(5) {
-        width: 70px;
-    }
-
-    .mitglieder-table th:nth-child(6),
-    .mitglieder-table td:nth-child(6) {
-        width: 70px;
-    }
-
-    .mitglieder-table th:nth-child(7),
-    .mitglieder-table td:nth-child(7) {
-        width: 100px;
+    .percent-segment.green {
+        background: #2ecc71;
+        color: black;
     }
 
 
@@ -132,7 +169,7 @@
 ========================== */
 
 .page-footer {
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: right;
     font-size: 11px;
     color: #777;
